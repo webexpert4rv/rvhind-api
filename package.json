@@ -17,8 +17,8 @@
   "dependencies": {
     "babel": "^5.8.21",
     "babel-runtime": "^5.8.24",
-    "hindsight-core": "satishsa1107/hindsight-core",
-    "transporter-node": "satishsa1107/transporter-node",
+    "hindsight-core": "hindsight-io/hindsight-core",
+    "transporter-node": "hindsight-io/hindsight-transporternode",
     "ws": "^0.8.0"
   },
   "devDependencies": {
