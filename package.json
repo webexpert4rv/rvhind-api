@@ -17,8 +17,8 @@
   "dependencies": {
     "babel": "^5.8.21",
     "babel-runtime": "^5.8.24",
-    "hindsight-core": "hindsight-io/hindsight-core",
-    "transporter-node": "hindsight-io/hindsight-transporternode",
+    "hindsight-core": "git+https://8b4598a0f6ff556a1af68c10112d6af8084b6010:x-oauth-basic@github.com/hindsight-io/hindsight-core.git",
+    "hindsight-core": "git+https://8b4598a0f6ff556a1af68c10112d6af8084b6010:x-oauth-basic@github.com/hindsight-io/hindsight-transporternode.git",
     "ws": "^0.8.0"
   },
   "devDependencies": {
