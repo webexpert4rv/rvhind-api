@@ -87,7 +87,6 @@ result.on('mentor.profile', auth, async (msg, context) => {
 })
 
 result.on('mentor.search', msg => {
-    console.log(msg.payload)
 	return Mentor.search(msg.payload)
 })
 
@@ -114,8 +113,8 @@ result.on('question.view', auth, async (msg, context) => {
 })
 
 result.on('question.search', msg => {
-	const { category, size} = msg.payload
-	return Question.search(category, size)
+	const { category } = msg.payload
+	return Question.search(category)
 })
 
 result.on('question.get', msg => {
