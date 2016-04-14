@@ -113,8 +113,8 @@ result.on('question.view', auth, async (msg, context) => {
 })
 
 result.on('question.search', msg => {
-	const { category } = msg.payload
-	return Question.search(category)
+	const { category, size } = msg.payload
+	return Question.search(category, size)
 })
 
 result.on('question.get', msg => {
