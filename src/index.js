@@ -49,23 +49,18 @@ result.on('user.update', auth, (msg, context) => {
 })
 
 result.on('mentor.upgrade', auth, async (msg, context) => {
-	const token = await Mentor.upgrade(context.me.key, msg.payload.email)
-	console.log(token)
-    await Mentor.emailtoken(token, msg.payload.email)
-	return {
-        success: true
-	}
+	await Mentor.upgrade(context.me.key, msg.payload.email)
+    return {
+        success: true,
+    }
+})
+
+result.on('mentor.confirm', auth, async (msg, context) => {
+    return await Mentor.confirm(context.me.key, msg.payload.token)
 })
 
 result.on('mentor.get', auth, msg => {
 	return Mentor.fromKey(msg.payload.key)
-})
-
-result.on('mentor.confirm', auth, async (msg, context) => {
-    const user = await Mentor.confirm(msg.payload.token)
-    return {
-        session: msg.meta.session,
-    }
 })
 
 result.on('mentor.event.add', auth, (msg, context) => {
