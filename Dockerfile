@@ -1,6 +1,6 @@
 FROM ubuntu
 RUN apt-get update
-RUN apt-get -y install bash git openssh-client g++ gcc libc6-dev make curl
+RUN apt-get -y install bash git openssh-client g++ gcc libc6-dev make curl sudo
 
 ADD ssh/ /root/.ssh
 RUN chmod 700 /root/.ssh/*
