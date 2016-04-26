@@ -20,8 +20,8 @@ result.on('file.upload', async msg => {
 })
 
 result.on('user.register', async msg => {
-	const { first, last, email, password, refcode } = msg.payload
-	const user = await User.create(first, last, email, password, refcode)
+	const { first, last, email, password, refcode, end, degree} = msg.payload
+	const user = await User.create(first, last, email, password, refcode, end, degree)
 	const session = await User.login(email, password)
 	return {
 		user,
