@@ -59,7 +59,7 @@ result.on('mentor.confirm', auth, async (msg, context) => {
     return await Mentor.confirm(context.me.key, msg.payload.token)
 })
 
-result.on('mentor.get', auth, msg => {
+result.on('mentor.get', msg => {
 	return Mentor.fromKey(msg.payload.key)
 })
 
