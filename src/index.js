@@ -77,6 +77,10 @@ result.on('mentor.event.delete', auth, async (msg, context) => {
 	}
 })
 
+result.on('mentor.image', auth, async (msg, context) => {
+    return await Mentor.image(context.me.key, msg.payload.link)
+})
+
 result.on('mentor.profile', auth, async (msg, context) => {
 	return Mentor.profile(context.me.key, msg.payload)
 })
