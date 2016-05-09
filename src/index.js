@@ -112,13 +112,22 @@ result.on('question.view', auth, async (msg, context) => {
 })
 
 result.on('question.search', msg => {
-	const { category, size } = msg.payload
-	return Question.search(category, size)
+	const { category, size, tagquery } = msg.payload
+    console.log('IN API')
+    console.log(category)
+    console.log(size)
+    console.log(tagquery)
+	return Question.search(category, size, tagquery)
 })
 
 result.on('question.get', msg => {
 	const { question } = msg.payload
 	return Question.fromKey(question)
+})
+
+result.on('question.tags', msg => {
+	const { question } = msg.payload
+	 return Question.getTags(question)
 })
 
 result.on('question.answers', msg => {
