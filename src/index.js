@@ -85,12 +85,16 @@ result.on('mentor.profile', auth, async (msg, context) => {
 	return Mentor.profile(context.me.key, msg.payload)
 })
 
-result.on('mentor.search', msg => {
+result.on('mentor.search', async(msg) => {
 	return Mentor.search(msg.payload)
 })
 
 result.on('mentor.schools', async () => {
 	return Mentor.schools()
+})
+
+result.on('mentor.calculaterep', async(msg, context) => {
+    return Mentor.calculateRep(msg.payload)
 })
 
 result.on('question.ask', auth, (msg, context) => {
@@ -113,10 +117,6 @@ result.on('question.view', auth, async (msg, context) => {
 
 result.on('question.search', msg => {
 	const { category, size, tagquery } = msg.payload
-    console.log('IN API')
-    console.log(category)
-    console.log(size)
-    console.log(tagquery)
 	return Question.search(category, size, tagquery)
 })
 
