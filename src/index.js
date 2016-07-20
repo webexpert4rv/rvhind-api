@@ -89,6 +89,10 @@ result.on('mentor.search', async(msg) => {
 	return Mentor.search(msg.payload)
 })
 
+result.on('mentor.topscore', async() => {
+	return Mentor.topscore()
+})
+
 result.on('mentor.schools', async () => {
 	return Mentor.schools()
 })

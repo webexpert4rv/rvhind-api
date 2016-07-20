@@ -18,6 +18,7 @@
     "babel": "^5.8.21",
     "babel-runtime": "^5.8.24",
     "hindsight-core": "hindsight-io/hindsight-core",
+    "react-fontawesome": "^1.1.0",
     "transporter-node": "satishsa1107/transporter-node",
     "ws": "^0.8.0"
   },
