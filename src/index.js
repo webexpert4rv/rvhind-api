@@ -178,5 +178,12 @@ result.on('customer.create', auth, async (msg, context) => {
 	}
 })
 
+result.on('user.forgot', msg => {
+	return User.forgot(msg.payload.email)
+})
+
+result.on('user.forgotupdate', msg => {
+	return User.forgotupdate(msg.payload.key, msg.payload.code, msg.payload.password)
+})
 
 result.start()
