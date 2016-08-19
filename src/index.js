@@ -102,8 +102,8 @@ result.on('mentor.calculaterep', async(msg, context) => {
 })
 
 result.on('question.ask', auth, (msg, context) => {
-	const { title, body, tags } = msg.payload
-	return Question.ask(context.me.key, title, body, ...tags)
+	const { category, question_topics, title, body, tags } = msg.payload
+	return Question.ask(context.me.key, category, question_topics, title, body, ...tags)
 })
 
 result.on('question.respond', auth, (msg, context) => {
@@ -132,6 +132,10 @@ result.on('question.get', msg => {
 result.on('question.tags', msg => {
 	const { question } = msg.payload
 	 return Question.getTags(question)
+})
+
+result.on('question.alltags', msg => {
+	 return Question.getAllTags()
 })
 
 result.on('question.answers', msg => {
